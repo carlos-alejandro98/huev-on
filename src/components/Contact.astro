@@ -1,0 +1,290 @@
+---
+
+---
+
+<section class="contact-section" id="contacto">
+    <div class="container">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2 class="section-title">Contáctanos</h2>
+                <p class="section-description">
+                    ¿Listo para disfrutar de los mejores huevos? Estamos aquí
+                    para atenderte.
+                </p>
+
+                <div class="info-items">
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>+34 123 456 789</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">📧</div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@huev-on.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div>
+                            <h3>Dirección</h3>
+                            <p>
+                                Calle de los Huevos, 123<br />28001 Madrid,
+                                España
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">⏰</div>
+                        <div>
+                            <h3>Horario</h3>
+                            <p>
+                                Lunes a Viernes: 8:00 - 18:00<br />Sábados: 9:00
+                                - 14:00
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button"
+                        >Enviar Mensaje</button
+                    >
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Updated logo path to use local file -->
+            <img
+                src="/images/huev-on-logo.png"
+                alt="Huev-on Logo"
+                class="footer-logo"
+            />
+            <p class="footer-text">
+                © 2025 Huev-on. Todos los derechos reservados.
+            </p>
+            <p class="footer-slogan">Ponemos el huevo por ti</p>
+        </div>
+    </footer>
+</section>
+
+<script>
+    const form = document.getElementById("contact-form") as HTMLFormElement;
+
+    if (form) {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert(
+                "¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.",
+            );
+            form.reset();
+        });
+    }
+</script>
+
+<style>
+    .contact-section {
+        background: linear-gradient(to bottom, var(--color-white), #fef3c7);
+        padding: 6rem 2rem 0;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-bottom: 4rem;
+    }
+
+    .section-title {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        color: var(--color-dark);
+        margin-bottom: 1rem;
+    }
+
+    .section-description {
+        font-size: 1.2rem;
+        color: #6b7280;
+        margin-bottom: 3rem;
+        line-height: 1.6;
+    }
+
+    .info-items {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .info-item {
+        display: flex;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .info-icon {
+        font-size: 2rem;
+        flex-shrink: 0;
+    }
+
+    .info-item h3 {
+        font-size: 1.2rem;
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .info-item p {
+        color: #6b7280;
+        line-height: 1.6;
+    }
+
+    .contact-form-container {
+        background: var(--color-white);
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .form-group label {
+        font-weight: 600;
+        color: var(--color-dark);
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.875rem;
+        border: 2px solid #e5e7eb;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-family: inherit;
+        transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--color-primary);
+    }
+
+    .form-group textarea {
+        resize: vertical;
+    }
+
+    .submit-button {
+        padding: 1rem 2rem;
+        background: linear-gradient(
+            135deg,
+            var(--color-primary),
+            var(--color-secondary)
+        );
+        color: var(--color-white);
+        font-size: 1.1rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+        box-shadow: 0 5px 20px rgba(245, 158, 11, 0.3);
+    }
+
+    .submit-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(245, 158, 11, 0.5);
+    }
+
+    .footer {
+        background: var(--color-dark);
+        padding: 3rem 2rem;
+        margin-top: 4rem;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .footer-logo {
+        width: 150px;
+        height: auto;
+        margin-bottom: 1rem;
+        filter: brightness(1.2);
+    }
+
+    .footer-text {
+        color: #9ca3af;
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-slogan {
+        color: var(--color-primary);
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    @media (max-width: 1024px) {
+        .contact-content {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .contact-section {
+            padding: 4rem 1rem 0;
+        }
+
+        .contact-form-container {
+            padding: 1.5rem;
+        }
+    }
+</style>

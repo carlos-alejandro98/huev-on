@@ -1,0 +1,197 @@
+---
+
+---
+
+<section class="scroll-video-section" id="calidad">
+    <div class="container">
+        <div class="video-container">
+            <video
+                id="scroll-video"
+                class="scroll-video"
+                muted
+                playsinline
+                preload="auto"
+            >
+                <source src="/videos/egg-break.mp4" type="video/mp4" />
+            </video>
+        </div>
+        <div class="content">
+            <h2 class="section-title">Calidad que se Rompe los Esquemas</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🥚</div>
+                    <h3>100% Naturales</h3>
+                    <p>
+                        Nuestros huevos provienen de gallinas criadas en
+                        libertad, alimentadas con granos orgánicos
+                        seleccionados.
+                    </p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✨</div>
+                    <h3>Frescura Garantizada</h3>
+                    <p>
+                        Recolectados diariamente y entregados en menos de 24
+                        horas para garantizar la máxima frescura.
+                    </p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Calidad Premium</h3>
+                    <p>
+                        Certificados con los más altos estándares de calidad.
+                        Yemas doradas y claras cristalinas.
+                    </p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <h3>Mejores Precios</h3>
+                    <p>
+                        Calidad premium sin comprometer tu bolsillo. Los mejores
+                        huevos al mejor precio del mercado.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const video = document.getElementById("scroll-video") as HTMLVideoElement;
+    const section = document.querySelector(
+        ".scroll-video-section",
+    ) as HTMLElement;
+
+    if (video && section) {
+        function updateVideoProgress() {
+            const rect = section.getBoundingClientRect();
+            const sectionHeight = section.offsetHeight;
+            const windowHeight = window.innerHeight;
+
+            // Calculate scroll progress through the section
+            const scrollProgress = Math.max(
+                0,
+                Math.min(
+                    1,
+                    (windowHeight - rect.top) / (windowHeight + sectionHeight),
+                ),
+            );
+
+            // Update video time based on scroll progress
+            if (video.duration) {
+                video.currentTime = video.duration * scrollProgress;
+            }
+        }
+
+        window.addEventListener("scroll", updateVideoProgress);
+        updateVideoProgress();
+    }
+</script>
+
+<style>
+    .scroll-video-section {
+        min-height: 200vh;
+        background: linear-gradient(to bottom, #fef3c7, #ffffff);
+        padding: 4rem 0;
+    }
+
+    .container {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4rem;
+        padding: 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .video-container {
+        flex: 1;
+        max-width: 600px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        background: var(--color-dark);
+    }
+
+    .scroll-video {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .content {
+        flex: 1;
+        max-width: 600px;
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        color: var(--color-dark);
+        margin-bottom: 2rem;
+        background: linear-gradient(
+            135deg,
+            var(--color-primary),
+            var(--color-secondary)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .features {
+        display: grid;
+        gap: 2rem;
+    }
+
+    .feature {
+        background: var(--color-white);
+        padding: 1.5rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+    .feature:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2);
+    }
+
+    .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .feature h3 {
+        font-size: 1.3rem;
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .feature p {
+        color: #6b7280;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+        .container {
+            flex-direction: column;
+            gap: 2rem;
+            height: auto;
+            position: relative;
+        }
+
+        .scroll-video-section {
+            min-height: auto;
+        }
+
+        .video-container {
+            max-width: 100%;
+        }
+    }
+</style>

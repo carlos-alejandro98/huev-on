@@ -1,0 +1,207 @@
+---
+
+---
+
+<section class="products-section" id="productos">
+    <div class="container">
+        <h2 class="section-title">Nuestros Productos</h2>
+        <p class="section-subtitle">
+            Descubre nuestra selección de huevos premium
+        </p>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <!-- Updated placeholder images with proper queries -->
+                    <img
+                        src="/placeholder.svg?height=300&width=300"
+                        alt="Huevos Blancos"
+                    />
+                </div>
+                <div class="product-info">
+                    <h3>Huevos Blancos Premium</h3>
+                    <p>
+                        Huevos de gallinas blancas, perfectos para todo tipo de
+                        preparaciones. Cáscara resistente y yema dorada.
+                    </p>
+                    <div class="product-features">
+                        <span class="badge">12 unidades</span>
+                        <span class="badge">Extra frescos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card featured">
+                <div class="featured-badge">Más Popular</div>
+                <div class="product-image">
+                    <!-- Updated placeholder images with proper queries -->
+                    <img
+                        src="/placeholder.svg?height=300&width=300"
+                        alt="Huevos Orgánicos"
+                    />
+                </div>
+                <div class="product-info">
+                    <h3>Huevos Orgánicos</h3>
+                    <p>
+                        De gallinas criadas en libertad con alimentación 100%
+                        orgánica. Sabor superior y nutrición excepcional.
+                    </p>
+                    <div class="product-features">
+                        <span class="badge">12 unidades</span>
+                        <span class="badge">Certificado orgánico</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <!-- Updated placeholder images with proper queries -->
+                    <img
+                        src="/placeholder.svg?height=300&width=300"
+                        alt="Huevos Jumbo"
+                    />
+                </div>
+                <div class="product-info">
+                    <h3>Huevos Jumbo</h3>
+                    <p>
+                        Tamaño extra grande para quienes buscan más. Ideales
+                        para repostería y preparaciones especiales.
+                    </p>
+                    <div class="product-features">
+                        <span class="badge">6 unidades</span>
+                        <span class="badge">Tamaño XL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .products-section {
+        padding: 6rem 2rem;
+        background: var(--color-white);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .section-title {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        text-align: center;
+        color: var(--color-dark);
+        margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #6b7280;
+        margin-bottom: 4rem;
+    }
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .product-card {
+        position: relative;
+        background: var(--color-light);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(245, 158, 11, 0.3);
+    }
+
+    .product-card.featured {
+        border: 3px solid var(--color-primary);
+    }
+
+    .featured-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(
+            135deg,
+            var(--color-primary),
+            var(--color-secondary)
+        );
+        color: var(--color-white);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        z-index: 10;
+        box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+    }
+
+    .product-image {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        background: var(--color-white);
+    }
+
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .product-card:hover .product-image img {
+        transform: scale(1.1);
+    }
+
+    .product-info {
+        padding: 2rem;
+    }
+
+    .product-info h3 {
+        font-size: 1.5rem;
+        color: var(--color-dark);
+        margin-bottom: 1rem;
+    }
+
+    .product-info p {
+        color: #6b7280;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .product-features {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .badge {
+        background: var(--color-primary);
+        color: var(--color-white);
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+        .products-section {
+            padding: 4rem 1rem;
+        }
+
+        .products-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
